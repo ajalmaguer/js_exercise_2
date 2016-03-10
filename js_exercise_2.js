@@ -145,25 +145,32 @@ console.log(theTarget)
  for a guess and informing whether the guess
  is too low or too high. */
 
+var guess = 0;
+var theTarget = Math.round(100 * Math.random()) + 1;
+
+console.log('the target is: ', theTarget)
+
 // var guess = 0;
 // var theTarget = Math.round(100 * Math.random()) + 1;
 
 // console.log('the target is: ', theTarget)
 
 // while (guess !== theTarget) {
-//     guess = prompt("Make a guess!");
+//     guess = parseInt(prompt("Make a guess!"));
 
 //     console.log("guess = ", guess)
 //     console.log("theTarget = ", theTarget)
-//     console.log("test = " guess !== theTarget)
+//     console.log("test = ", guess != theTarget)
+//     console.log("type of guess = ", typeof guess)
+//     console.log("type of theTarget = ", typeof theTarget)
 
 //     if (guess > theTarget) {
 //         alert("Too high!");
 //     } else if (guess < theTarget) {
 //         alert("Too low!");
 //     } else {
-//       alert("correct")
-//       break
+//       guess = theTarget
+//       console.log("correct")
 //     }
 // }
 
@@ -273,6 +280,7 @@ console.log('functions ------------')
 //  appropriate example values. In a comment, write
 //  what the expected output will be. */
 
+console.log("concat strings function")
 function concatStrings(str, appendString) {
     return str + appendString;
 }
@@ -285,6 +293,7 @@ console.log(concatStrings('hello ', 'aj'))
 //  variable names! Call the function with an appropriate
 //  parameter. */
 
+console.log("increment function")
 function increment(num) {
     return num + 1;
 }
@@ -301,6 +310,7 @@ increment(3);  // output is:4
 //  with example values and write the output as
 //  a comment. */
 
+console.log("repeat a string function")
 function repeatA(numTimesRepeated) {
     var returnString = "";
 
@@ -321,6 +331,7 @@ console.log(repeatA(4));   // output is: aaaa
 //  with example values and write the output as
 //  a comment. */
 
+console.log("function with two inputs")
 function repeatString(numTimesRepeated, stringToRepeat) {
     var returnString = "";
 
@@ -336,31 +347,33 @@ console.log(repeatString(5, "z"));  // output is:
 // /* Write a function which returns the original array,
 //  but reversed! */
 
+console.log("reverse array")
 function reverseStrings(arrayOfStrings)
 {
     var reversedArray = [];
 
-    for (i=arrayOfStrings.length-1; null; null) {
-        reversedArray.push(null);
+    for (i=arrayOfStrings.length-1; i >= 0; i--) {
+        reversedArray.push(arrayOfStrings[i]);
     }
 
     return reversedArray;
 }
 
-// var foods = ["Burger", "Fries", "Drink", "Tomato"];
-// reverseStrings(foods);
+var foods = ["Burger", "Fries", "Drink", "Tomato"];
+console.log(reverseStrings(foods));
 
 // /* Note that variables can be assigned functions. */
 
-// var someVariable = repeatA;
-// var anotherVariable = repeatA;
+var someVariable = repeatA;
+var anotherVariable = repeatA;
 
 // /* Try running the above two lines in your browser.
 //  Now, try calling the functions by using the
 //  new variables. (i.e. run the below code!) */
 
-// someVariable(3);
-// anotherVariable(5);
+console.log("assigning functions to variables")
+console.log(someVariable(3));
+console.log(anotherVariable(5));
 
 // /* This is an important fact about JavaScript --
 //  functions can be assigned to variables and
